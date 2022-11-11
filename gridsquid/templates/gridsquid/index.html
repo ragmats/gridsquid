@@ -1,0 +1,142 @@
+{% extends "gridsquid/layout.html" %}
+{% load static %}
+
+{% block title %}
+    GridSquid
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'gridsquid/js/guestcookie.js' %}" defer></script>
+<script src="{% static 'gridsquid/js/gridsquid.js' %}" defer></script>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <div class="view" id="main-view">
+            <div class="main-container">
+                <div class="grid-item pointer" id="main-grid-1">
+                        <img class="grid-item-icon-logo" src="{% static 'gridsquid/img/defaultsquid.svg' %}"></a>
+                </div>
+                <div class="grid-item pointer" id="main-grid-2">
+                        <img class="grid-item-icon" src="{% static 'gridsquid/img/icons/grid.png' %}"></a>
+                    <h2 class="grid-item-title click">Create Grid</h2>
+                    <p class="grid-item-text">Add your own photos, audio, and text.</p>
+                </div>
+                <div class="grid-item pointer" id="main-grid-3">
+                        <img class="grid-item-icon" src="{% static 'gridsquid/img/icons/organization.png' %}"></a>
+                    <h2 class="grid-item-title click">MyGrids</h2>
+                    <p class="grid-item-text">Organize grids with customizable albums.</p>
+                </div>
+                <div class="grid-item pointer" id="main-grid-4">
+                        <img class="grid-item-icon" src="{% static 'gridsquid/img/icons/about.png' %}"></a>
+                    <h2 class="grid-item-title click">About</h2>
+                    <p class="grid-item-text">Learn more and contact the developer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="view" id="create-grid-view">
+        </div>
+        <div class="view" id="create-tile-view">
+        </div>
+        <div class="view" id="mygrids-view">
+        </div>
+        <div class="view" id="about-view">
+            <div class="about-container">
+                <h2 class="about-heading">About GridSquid</h2>
+                <div class="about-sub-container">
+                    <div class="about-icon-container">
+                        <img class="about-icon" src="{% static 'gridsquid/img/icons/python.png' %}"><img class="about-icon" src="{% static 'gridsquid/img/icons/js.png' %}">
+                    </div>
+                    <h3 class="about-sub-heading">Specifications</h3>
+                    <p>GridSquid is a single-page application coded in Python (Django) and JavaScript that lets a user make custom grids of images with associated sounds and captions. It was completed in 2022 as the <a href="https://cs50.harvard.edu/web/2020/projects/final/capstone/" target="_new">Capstone project</a> for <a href="https://cs50.harvard.edu/web/2020/" target="_new">Harvard's CS50 Web Programming course</a>.</p>
+                </div>
+                <div class="about-sub-container">
+                    <div class="about-icon-container">
+                        <img class="about-icon" src="{% static 'gridsquid/img/icons/inspiration.png' %}"><img class="about-icon" src="{% static 'gridsquid/img/icons/learning.png' %}">
+                    </div>
+                    <h3 class="about-sub-heading">Inspiration</h3>
+                    <p>The idea came from a desire to teach toddlers the faces, names, and voices of family members. However, GridSquid can be used for various educational purposes, such as multi-media flashcards for homeschool curriculum, second-language studies, and other subjects for learners of all ages.</p>
+                </div>
+                <div class="about-sub-container">
+                    <div class="about-icon-container">
+                        <img class="about-icon" src="{% static 'gridsquid/img/icons/grid.png' %}"><img class="about-icon" src="{% static 'gridsquid/img/icons/edit.png' %}"><img class="about-icon" src="{% static 'gridsquid/img/icons/view.png' %}"><img class="about-icon" src="{% static 'gridsquid/img/icons/organization.png' %}">
+                    </div>
+                    <h3 class="about-sub-heading">Main features include:</h3>
+                    <ul>
+                        <li><b>An edit mode that allows:</b>
+                            <ul>
+                                <li>Grids to be named, expanded, resized, and sorted,</li>
+                                <li>Tiles to be added or removed from the grid,</li>
+                                <li>Specific tiles to have:
+                                    <ul>
+                                        <li>User-uploaded images (with cropping functionality),</li>
+                                        <li>User-uploaded audio files (or direct recordings using the device microphone),</li>
+                                        <li>Text captions, limited by characters, that can be previewed and edited.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><b>A view mode that allows</b>:
+                            <ul>
+                                <li>Each tile to be expanded, showing an enlarged image, existing text caption, and playing existing audio,</li>
+                                <li>A memory game that can be played on any grid,</li>
+                                <li>An auto-generated quiz for any grid that can be taken with audio only, text only, or both.</li>
+                            </ul>
+                        </li>
+                        <li><b>A "MyGrids" section that allows</b>:
+                            <ul>
+                                <li>Grids to be saved and sorted into albums,</li>
+                                <li>Multiple grids to be moved into an album at once,</li>
+                                <li>Albums to be renamed or removed.</li>
+                            </ul>
+                        </li>
+                        <li><b>Guest accounts that allow:</b>
+                            <ul>
+                                <li>Any user to try GridSquid without having to register for up to 30 days,</li>
+                                <li>Any guest accounts, along with all saved grids and media, to be converted automatically to user accounts upon registration.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="about-sub-heading">Future features include:</h3>
+                    <ul>
+                        <li>Ability to share grids via permanent URL</li>
+                        <li>Invite others via email to add photos and sounds to your grid</li>
+                        <li>Custom confirmations</li>
+                    </ul>
+                </div>
+
+                <div class="about-sub-container">
+                    <div class="about-icon-container">
+                        <img class="about-icon" src="{% static 'gridsquid/img/icons/freeaccess.png' %}">
+                    </div>
+                    <h3 class="about-sub-heading">Attributions</h3>
+                    <p>With thanks to the artists, the following Flaticons were used:
+                        <a href="https://www.flaticon.com/free-icons/squid" target="_new" title="squid icons">Squid icons by Vitaly Gorbachev & Freepik</a>,
+                        <a href="https://www.flaticon.com/free-icons/speaker" target="_new" title="speaker icons">speaker icons by Pixel perfect</a>,
+                        <a href="https://www.flaticon.com/free-icons/customize" target="_new" title="customize icons">Customize icons by th studio</a>,
+                        <a href="https://www.flaticon.com/free-icons/brain" target="_new" title="brain icons">Brain icons by Smashicons</a>,
+                        <a href="https://www.flaticon.com/free-icons/electronics" target="_new" title="electronics icons">Electronics icons by xnimrodx</a>,
+                        <a href="https://www.flaticon.com/free-icons/email" target="_new" title="email icons">Email icons by Those Icons</a>,
+                        <a href="https://www.flaticon.com/free-icons/project" target="_new" title="project icons">Project</a> and
+                        <a href="https://www.flaticon.com/free-icons/edit" target="_new" title="edit icons">Edit icons by Kiranshastry</a>, and
+                        <a href="https://www.flaticon.com/free-icons/storage" target="_new" title="storage icons">Storage</a>,
+                        <a href="https://www.flaticon.com/free-icons/quiz" target="_new" title="quiz icons">Quiz icons</a>,
+                        <a href="https://www.flaticon.com/free-icons/like" target="_new" title="like icons">Like icons</a>,
+                        <a href="https://www.flaticon.com/free-icons/menu" target="_new" title="menu icons">Menu icons</a>,
+                        <a href="https://www.flaticon.com/free-icons/javascript" target="_new" title="javascript icons">JavaScript icons</a>,
+                        <a href="https://www.flaticon.com/free-icons/python" target="_new" title="python icons">Python icons</a>,
+                        <a href="https://www.flaticon.com/free-icons/school" target="_new" title="school icons">School icons</a>, and
+                        <a href="https://www.flaticon.com/free-icons/eye" target="_new" title="eye icons">Eye icons by Freepik</a>.
+                    </p>
+                </div>
+                <div class="about-sub-container">
+                    <div class="about-icon-container">
+                        <img class="about-icon" src="{% static 'gridsquid/img/icons/email.png' %}">
+                    </div>
+                    <h3 class="about-sub-heading">Contact</h3>
+                    <p>Please send feedback to gridsquid at ragmats dot com. Thank you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

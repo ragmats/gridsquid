@@ -1,0 +1,39 @@
+{% extends "gridsquid/layout-login.html" %}
+{% load static %}
+
+{% block title %}
+    GridSquid - Log In
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'gridsquid/js/guestcookie.js' %}" defer></script>
+{% endblock %}
+
+{% block body %}
+    <div class="full-screen-container">
+        <div class="login-register-container">
+            <div class="login-register-logo-container">
+                <img class="login-register-logo" src="{% static 'gridsquid/img/gs_logo_long_dark.svg' %}"></a>
+            </div>
+            <h1 class="login-register-title"><a href="{% url 'welcome' %}">Welcome</a>, please log in.</h1>
+
+            <form class="form" action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {% if message %}
+                    <div class="alert alert-danger" role="alert">{{ message }}</div>
+                {% endif %}
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input autofocus type="text" name="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+                </div>
+                <button type="submit" class="login-register-button">Login</button>
+                <p class="login-register-text">No account? <a href="{% url 'register' %}">Register here</a> or continue as a <a href="{% url 'index' %}">guest</a>.</p>
+                <p class="login-register-text"><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
