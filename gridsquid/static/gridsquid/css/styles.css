@@ -865,7 +865,8 @@ select:focus,
     display: flex;
     flex-wrap: wrap;
     /* Gap and margin need to match JS global variables: GRID_BOX_GAP, GRID_BOX_MARGIN */
-    gap: 10px;
+    /* Gap is 9.5 as a quick-fix for a wrapping issue on Amazon tablets */
+    gap: 9.5px;
     /* margin: 0 15px 15px 15px; */
 }
 

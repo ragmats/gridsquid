@@ -21,7 +21,8 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("gridsquid/", include("gridsquid.urls"))
+    path("gridsquid/", include("gridsquid.urls")),
+    path("", include("gridsquid.urls"))
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # Learned from: https://www.youtube.com/watch?v=fsVY66QBhwM&ab_channel=CalebCurry
 # and: https://ordinarycoders.com/blog/article/django-file-image-uploads

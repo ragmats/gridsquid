@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-$t54re*ukpji((f2rgr8&4(u)^2pqx$ruva6278hw$u7386t!$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -131,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -140,11 +140,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SendGrid SMTP Confirguration
 # Reference: https://www.twilio.com/blog/email-activation-django-sendgrid
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey' # Name for all the SenGrid accounts
-EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY')
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'apikey' # Name for all the SenGrid accounts
+# EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY')
+
+# SendGrid API Configuration
+# Learned from: https://simpleit.rocks/python/django/adding-email-to-django-the-easiest-way/
+# https://github.com/sklarsa/django-sendgrid-v5
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # The email you'll be sending emails from
 DEFAULT_FROM_EMAIL = os.getenv('FROM_EMAIL', default='noreply@ragmats.com')
